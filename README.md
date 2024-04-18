@@ -20,9 +20,7 @@
 
 <div align="center">
 
-![MyPet Demo](assets/mypetdemo0.gif)
-
-<img src="assets/mypetdemo0.gif" height="350">
+<img src="MyPet0\assets\mypetdemo0.gif" height="350">
 
 </div> 
 
