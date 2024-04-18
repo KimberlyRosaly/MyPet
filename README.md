@@ -12,7 +12,11 @@
 
 <hr />
 
-<center>Meet a pet that gradually gets more and more hungry over time!</center>
+<div align="center"
+
+Meet a pet that gradually gets more and more hungry over time!
+
+</div>
 
 <!-- -------------------------------------------------------------------------DEMO -->
 
@@ -24,20 +28,20 @@
 
 </div> 
 
+<hr />
+
 <!-- -------------------------------------------------------------------------SPECS -->
 
-<center>
+<div align="center">
 
 | > > > > > > > > > > > | S P E C I F I C A T I O N S |
 | :---        |    :----:   |
 | LANGUAGE | C# |
 | FRAMEWORK | .NET CORE |
 
-</center>
+</div>
 
 <!-- -----------------------------------------------------------------------PURPOSE -->
-
-<hr />
 
 <hr />
 
