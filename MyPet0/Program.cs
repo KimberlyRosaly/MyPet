@@ -5,21 +5,21 @@ using System.Threading.Tasks;
 class Program
 {
     static string petInhale = @"
-   _ _ _ 
- /       \
- | -   - | 
- \_ _ _ _/
+      _ _ _ 
+    /       \
+    | -   - | 
+    \_ _ _ _/
 ";
     static string petExhale = @"
-   _ _ _ 
- /       \
-|  -   -  |
- \_ _ _ _/
+      _ _ _ 
+    /       \
+   |  -   -  |
+    \_ _ _ _/
 "; static string petDead = @"
-   _ _ _ 
- /       \
-|  x   X  |
- \_ _ _ _/
+      _ _ _ 
+    /       \
+   |  x   X  |
+    \_ _ _ _/
 ";
     static string hungerMeter0 = "[ ][ ][ ][ ][ ]";
     static string hungerMeter1 = "[x][ ][ ][ ][ ]";
@@ -29,19 +29,20 @@ class Program
     static string hungerMeter5 = "[x][x][x][x][x]";
 
     static object consoleLock = new object();
-
     static bool alive = true;
     static bool breathing = false;
 
     static void Main(string[] args)
     {
+        Console.OutputEncoding = System.Text.Encoding.UTF8;
+        Console.Clear();
         // (1) PROMPTS
         lock (consoleLock)
         {
             Console.SetCursorPosition(0, 2);
             Console.WriteLine("WELCOME HOME!");
             Console.WriteLine("I AM YOUR PET!");
-            Console.WriteLine("Please, make sure I dont get too hungry!");
+            Console.WriteLine("Please, make sure I don't get too hungry!");
         }
 
         // (2) HUNGER
@@ -88,7 +89,7 @@ class Program
                                 Console.SetCursorPosition(0, 13);
                                 Console.Write(new string(' ', Console.WindowWidth));
                                 Console.SetCursorPosition(0, 13);
-                                Console.Write("I M DED! HALP!");
+                                Console.Write("O'NOOOO! I M DED!");
                             }
                             break;
 
@@ -134,14 +135,19 @@ class Program
 
         Console.ReadLine();
         Console.Clear();
-        Console.SetCursorPosition(0, 3);
-        Console.WriteLine("GOODBYYYYYYEEEE! I WILL MISS YOU!");
-        Console.WriteLine("Thank you for playing! <3");
-        Console.SetCursorPosition(0, 5);
-        Console.WriteLine(" ");
-        Console.WriteLine(" ");
-        
-        
-        
+        lock (consoleLock)
+        {
+            Console.SetCursorPosition(0, 3);
+            Console.WriteLine("     G O O D B Y E ! I WILL MISS YOU!");
+            Console.Write("Thanks for playing! ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("❤");
+            Console.ResetColor();
+            Console.WriteLine(" ");
+            Console.WriteLine(" ");
+        }
+
+
+
     }
 }
