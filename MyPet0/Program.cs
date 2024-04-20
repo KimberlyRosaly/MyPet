@@ -32,6 +32,16 @@ class Program
     static bool alive = true;
     static bool breathing = false;
 
+    static void SlowPrint(string message, int delay)
+    {
+        for (int i = 0; i < message.Length; i++)
+        {
+            Console.Write(message[i]);
+            System.Threading.Thread.Sleep(delay);
+        }
+        Console.WriteLine();
+    }
+
     static void Main(string[] args)
     {
         Console.OutputEncoding = System.Text.Encoding.UTF8;
@@ -40,7 +50,7 @@ class Program
         lock (consoleLock)
         {
             Console.SetCursorPosition(0, 2);
-            Console.WriteLine("WELCOME HOME!");
+            SlowPrint("WELCOME HOME!", 100);
             Console.WriteLine("I AM YOUR PET!");
             Console.WriteLine("Please, make sure I don't get too hungry!");
         }
