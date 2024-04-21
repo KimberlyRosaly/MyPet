@@ -51,7 +51,7 @@ class Program
         {
             Console.SetCursorPosition(0, 2);
             SlowPrint("WELCOME HOME!", 100);
-            Console.WriteLine("I AM YOUR PET!");
+            SlowPrint("I AM YOUR PET!", 100);
             Console.WriteLine("Please, make sure I don't get too hungry!");
         }
 
@@ -151,7 +151,7 @@ class Program
             Console.WriteLine("     G O O D B Y E ! I WILL MISS YOU!");
             Console.Write("Thanks for playing! ");
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("❤");
+            Console.WriteLine("❤"); no
             Console.ResetColor();
             Console.WriteLine(" ");
             Console.WriteLine(" ");
