@@ -41,6 +41,8 @@ class Program
         }
         Console.WriteLine();
     }
+    
+    static System.Timers.Timer timer = new System.Timers.Timer(1000);
 
     static void Main(string[] args)
     {
@@ -52,7 +54,7 @@ class Program
             Console.SetCursorPosition(0, 2);
             SlowPrint("WELCOME HOME!", 100);
             SlowPrint("I AM YOUR PET!", 100);
-            Console.WriteLine("Please, make sure I don't get too hungry!");
+            SlowPrint("Please, make sure I don't get too hungry!", 50);
         }
 
         // (2) HUNGER
@@ -112,7 +114,6 @@ class Program
         // (3) PET
         Task.Run(() =>
         {
-            System.Timers.Timer timer = new System.Timers.Timer(1000);
 
             timer.Elapsed += (sender, e) =>
             {
@@ -149,9 +150,9 @@ class Program
         {
             Console.SetCursorPosition(0, 3);
             Console.WriteLine("     G O O D B Y E ! I WILL MISS YOU!");
-            Console.Write("Thanks for playing! ");
+            SlowPrint("Thanks for playing! ", 50);
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("❤"); no
+            Console.Write("❤");
             Console.ResetColor();
             Console.WriteLine(" ");
             Console.WriteLine(" ");
