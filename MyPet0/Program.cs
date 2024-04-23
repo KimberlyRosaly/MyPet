@@ -67,26 +67,35 @@ class Program
                 lock (consoleLock)
                 {
                     Console.SetCursorPosition(0, 6);
+                    Console.Write("LEVEL OF H U N G E R :");
                     switch (meterIndex)
                     {
                         case 0:
-                            Console.Write(hungerMeter0);
+                            Console.WriteLine(hungerMeter0);
+                            {
+                                Console.SetCursorPosition(0, 13);
+                                SlowPrint("Ahhh.. I'm not hungry at all!", 50);
+                            }
                             meterIndex += 1;
                             break;
                         case 1:
-                            Console.Write(hungerMeter1);
+                            Console.WriteLine(hungerMeter1);
                             meterIndex += 1;
                             break;
                         case 2:
-                            Console.Write(hungerMeter2);
+                            Console.WriteLine(hungerMeter2);
                             meterIndex += 1;
                             break;
                         case 3:
-                            Console.Write(hungerMeter3);
+                            Console.WriteLine(hungerMeter3);
                             meterIndex += 1;
+                            {
+                                Console.SetCursorPosition(0, 13);
+                                Console.WriteLine("Uh oh..I'm super hungry now..");                                
+                            }
                             break;
                         case 4:
-                            Console.Write(hungerMeter4);
+                            Console.WriteLine(hungerMeter4);
                             meterIndex += 1;
                             {
                                 Console.SetCursorPosition(0, 13);
@@ -150,7 +159,7 @@ class Program
         {
             Console.SetCursorPosition(0, 3);
             Console.WriteLine("     G O O D B Y E ! I WILL MISS YOU!");
-            SlowPrint("Thanks for playing! ", 50);
+            Console.Write("Thanks for playing! ", 50);
             Console.ForegroundColor = ConsoleColor.Red;
             Console.Write("❤");
             Console.ResetColor();
