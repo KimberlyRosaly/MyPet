@@ -67,12 +67,14 @@ class Program
                 lock (consoleLock)
                 {
                     Console.SetCursorPosition(0, 6);
-                    Console.Write("LEVEL OF H U N G E R :");
+                    Console.Write("LEVEL OF H U N G E R : ");
                     switch (meterIndex)
                     {
                         case 0:
                             Console.WriteLine(hungerMeter0);
                             {
+                                Console.SetCursorPosition(0, 13);
+                                Console.Write(new string(' ', Console.WindowWidth));
                                 Console.SetCursorPosition(0, 13);
                                 SlowPrint("Ahhh.. I'm not hungry at all!", 50);
                             }
@@ -80,10 +82,22 @@ class Program
                             break;
                         case 1:
                             Console.WriteLine(hungerMeter1);
+                            {
+                                Console.SetCursorPosition(0, 13);
+                                Console.Write(new string(' ', Console.WindowWidth));
+                                Console.SetCursorPosition(0, 13);
+                                SlowPrint("*Belly grumble*", 50);
+                            }
                             meterIndex += 1;
                             break;
                         case 2:
                             Console.WriteLine(hungerMeter2);
+                            {
+                                Console.SetCursorPosition(0, 13);
+                                Console.Write(new string(' ', Console.WindowWidth));
+                                Console.SetCursorPosition(0, 13);
+                                SlowPrint("*Belly grumbles louder*", 50);
+                            }
                             meterIndex += 1;
                             break;
                         case 3:
@@ -91,7 +105,9 @@ class Program
                             meterIndex += 1;
                             {
                                 Console.SetCursorPosition(0, 13);
-                                Console.WriteLine("Uh oh..I'm super hungry now..");                                
+                                Console.Write(new string(' ', Console.WindowWidth));
+                                Console.SetCursorPosition(0, 13);
+                                SlowPrint("Uh oh..I'm super hungry now..", 50);                                
                             }
                             break;
                         case 4:
@@ -99,7 +115,9 @@ class Program
                             meterIndex += 1;
                             {
                                 Console.SetCursorPosition(0, 13);
-                                Console.Write("I M SSSSTARVING! HALP!");
+                                Console.Write(new string(' ', Console.WindowWidth));
+                                Console.SetCursorPosition(0, 13);
+                                SlowPrint("I M SSSSTARVING! HALP!", 50);
                             }
                             break;
                         case 5:
@@ -110,7 +128,10 @@ class Program
                                 Console.SetCursorPosition(0, 13);
                                 Console.Write(new string(' ', Console.WindowWidth));
                                 Console.SetCursorPosition(0, 13);
+                                Console.ForegroundColor = ConsoleColor.Red;
                                 Console.Write("O'NOOOO! I M DED!");
+                                Console.ResetColor();
+
                             }
                             break;
 
