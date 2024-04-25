@@ -101,7 +101,9 @@ class Program
                             meterIndex += 1;
                             break;
                         case 3:
+                            Console.ForegroundColor = ConsoleColor.Yellow;
                             Console.WriteLine(hungerMeter3);
+                            Console.ResetColor();
                             meterIndex += 1;
                             {
                                 Console.SetCursorPosition(0, 13);
@@ -111,17 +113,23 @@ class Program
                             }
                             break;
                         case 4:
+                            Console.ForegroundColor = ConsoleColor.DarkYellow;
                             Console.WriteLine(hungerMeter4);
+                            Console.ResetColor();
                             meterIndex += 1;
                             {
                                 Console.SetCursorPosition(0, 13);
                                 Console.Write(new string(' ', Console.WindowWidth));
                                 Console.SetCursorPosition(0, 13);
+                                Console.ForegroundColor = ConsoleColor.DarkYellow;
                                 SlowPrint("I M SSSSTARVING! HALP!", 50);
+                                Console.ResetColor();
                             }
                             break;
                         case 5:
+                            Console.ForegroundColor = ConsoleColor.Red;
                             Console.Write(hungerMeter5);
+                            Console.ResetColor();
                             alive = !alive;
                             lock (consoleLock)
                             {
