@@ -15,7 +15,14 @@ class Program
     /       \
    |  -   -  |
     \_ _ _ _/
-"; static string petDead = @"
+"; 
+    static string petInhaleWideEyed = @"
+      _ _ _ 
+    /       \
+    | O   o | 
+    \_ _ _ _/
+";
+    static string petDead = @"
       _ _ _ 
     /       \
    |  x   X  |
@@ -31,6 +38,7 @@ class Program
     static object consoleLock = new object();
     static bool alive = true;
     static bool breathing = false;
+    static bool starving = false;
 
     static void SlowPrint(string message, int delay)
     {
@@ -109,13 +117,16 @@ class Program
                                 Console.SetCursorPosition(0, 13);
                                 Console.Write(new string(' ', Console.WindowWidth));
                                 Console.SetCursorPosition(0, 13);
-                                SlowPrint("Uh oh..I'm super hungry now..", 50);                                
+                                Console.ForegroundColor = ConsoleColor.Yellow;
+                                SlowPrint("Uh oh..I'm super hungry now..", 50);   
+                                Console.ResetColor();
                             }
                             break;
                         case 4:
                             Console.ForegroundColor = ConsoleColor.DarkYellow;
                             Console.WriteLine(hungerMeter4);
                             Console.ResetColor();
+                            starving = true;
                             meterIndex += 1;
                             {
                                 Console.SetCursorPosition(0, 13);
@@ -158,11 +169,23 @@ class Program
                 lock (consoleLock)
                 {
                     Console.SetCursorPosition(0, 7);
-                    if (alive)
+                    if (alive && starving == false)
                     {
                         if (breathing)
                         {
                             Console.Write(petInhale);
+                        }
+                        else
+                        {
+                            Console.Write(petExhale);
+                        }
+                        breathing = !breathing;
+                    }
+                    else if (alive && starving == true)
+                    {
+                        if (breathing)
+                        {
+                            Console.Write(petInhaleWideEyed);
                         }
                         else
                         {
@@ -188,6 +211,7 @@ class Program
         {
             Console.SetCursorPosition(0, 3);
             Console.WriteLine("     G O O D B Y E ! I WILL MISS YOU!");
+            Console.WriteLine(" ");
             Console.Write("Thanks for playing! ", 50);
             Console.ForegroundColor = ConsoleColor.Red;
             Console.Write("❤");
