@@ -39,6 +39,7 @@ class Program
     static bool alive = true;
     static bool breathing = false;
     static bool starving = false;
+    static int meterIndex = 0;
 
     static void SlowPrint(string message, int delay)
     {
@@ -49,7 +50,15 @@ class Program
         }
         Console.WriteLine();
     }
-    
+
+    static void RevivePet()
+    {
+        alive = true;
+        starving = false;
+        meterIndex = 0;
+        timer.Start();
+    }
+
     static System.Timers.Timer timer = new System.Timers.Timer(1000);
 
     static void Main(string[] args)
@@ -68,8 +77,7 @@ class Program
         // (2) HUNGER
         Task.Run(async () =>
         {
-            // CREATE DEFAULT VALUE | FLAG VALUE | READ ALONE INDICES FOR METER ACCESS
-            int meterIndex = 0;
+
             while (true)
             {
                 lock (consoleLock)
@@ -152,7 +160,18 @@ class Program
                                 Console.ResetColor();
 
                             }
-                            break;
+                            Console.SetCursorPosition(0, 15);
+                            Console.WriteLine("Revive me? Input 'PLEASE!' and press [ENTER] key");
+                            string userInput = Console.ReadLine();
+                            if (userInput == "PLEASE!")
+                            {
+                                RevivePet();
+                            }
+                            else
+                            {
+                                Console.WriteLine("ENDING PROGRAM BEcAUSE YOU STARVED ME!");
+                            }
+                                break;
 
                     }
                 }
