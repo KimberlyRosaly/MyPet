@@ -224,7 +224,11 @@ class Program
             timer.Start();
         });
 
-        Console.ReadLine();
+        while (alive)
+        {
+            Console.ReadLine();
+        }
+        
         Console.Clear();
         lock (consoleLock)
         {
@@ -243,3 +247,21 @@ class Program
 
     }
 }
+
+/* 
+  (1) PROMPTS
+        Greeting
+        Introduction
+        Instructions
+  (2) HUNGER
+        Label | Meter
+  (3) PET
+        Artwork
+        Dialogue
+  (4) ACTIONS
+        Call To Action
+        Instructions
+  (5) OUTRO
+        Farewell
+        Adulation
+*/
