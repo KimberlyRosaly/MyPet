@@ -35,6 +35,17 @@ class Program
     static string hungerMeter4 = "[x][x][x][x][ ]";
     static string hungerMeter5 = "[x][x][x][x][x]";
 
+    Dictionary<string, string> prompts = new Dictionary<string, string>
+    {
+        { "greeting", "" },
+        { "introduction", "" },
+        { "instructions", "" },
+        { "label", "" },
+        { "meter", "" },
+        { "callToAction", "" },
+        { "outro", "" }
+    }
+
     static object consoleLock = new object();
     static bool alive = true;
     static bool breathing = false;
