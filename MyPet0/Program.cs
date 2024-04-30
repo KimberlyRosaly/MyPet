@@ -45,7 +45,16 @@ class Program
         { "callToAction", "" },
         { "outro", "" }
     }
-
+    Dictionary<string, string> hunger = new Dictionary<string, string>
+    {
+        { "label", "" },
+        { "meter0", "" },
+        { "meter1", "" },
+        { "meter2", "" },
+        { "meter3", "" },
+        { "meter4", "" },
+        { "meter5", "" }
+    }
     static object consoleLock = new object();
     static bool alive = true;
     static bool breathing = false;
