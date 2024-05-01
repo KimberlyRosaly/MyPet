@@ -55,6 +55,13 @@ class Program
         { "meter4", "" },
         { "meter5", "" }
     }
+    Dictionary<string, string> pet = new Dictionary<string, string>
+    {
+        { "inhale", "" },
+        { "exhale", "" },
+        { "inhaleWideEyed", "" },
+        { "dead", "" }
+    }
     static object consoleLock = new object();
     static bool alive = true;
     static bool breathing = false;
