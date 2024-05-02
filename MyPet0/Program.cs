@@ -28,12 +28,6 @@ class Program
    |  x   X  |
     \_ _ _ _/
 ";
-    static string hungerMeter0 = "[ ][ ][ ][ ][ ]";
-    static string hungerMeter1 = "[x][ ][ ][ ][ ]";
-    static string hungerMeter2 = "[x][x][ ][ ][ ]";
-    static string hungerMeter3 = "[x][x][x][ ][ ]";
-    static string hungerMeter4 = "[x][x][x][x][ ]";
-    static string hungerMeter5 = "[x][x][x][x][x]";
 
     Dictionary<string, string> prompts = new Dictionary<string, string>
     {
@@ -48,12 +42,12 @@ class Program
     Dictionary<string, string> hunger = new Dictionary<string, string>
     {
         { "label", "" },
-        { "meter0", "" },
-        { "meter1", "" },
-        { "meter2", "" },
-        { "meter3", "" },
-        { "meter4", "" },
-        { "meter5", "" }
+        { "meter0", "[ ][ ][ ][ ][ ]" },
+        { "meter1", "[x][ ][ ][ ][ ]" },
+        { "meter2", "[x][x][ ][ ][ ]" },
+        { "meter3", "[x][x][x][ ][ ]" },
+        { "meter4", "[x][x][x][x][ ]" },
+        { "meter5", "[x][x][x][x][x]" }
     }
     Dictionary<string, string> pet = new Dictionary<string, string>
     {
