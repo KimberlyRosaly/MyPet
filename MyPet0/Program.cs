@@ -4,44 +4,17 @@ using System.Threading.Tasks;
 
 class Program
 {
-    static string petInhale = @"
-      _ _ _ 
-    /       \
-    | -   - | 
-    \_ _ _ _/
-";
-    static string petExhale = @"
-      _ _ _ 
-    /       \
-   |  -   -  |
-    \_ _ _ _/
-"; 
-    static string petInhaleWideEyed = @"
-      _ _ _ 
-    /       \
-    | O   o | 
-    \_ _ _ _/
-";
-    static string petDead = @"
-      _ _ _ 
-    /       \
-   |  x   X  |
-    \_ _ _ _/
-";
-
     Dictionary<string, string> prompts = new Dictionary<string, string>
     {
-        { "greeting", "" },
-        { "introduction", "" },
-        { "instructions", "" },
-        { "label", "" },
-        { "meter", "" },
-        { "callToAction", "" },
-        { "outro", "" }
+        { "greeting", "WELCOME HOME!" },
+        { "introduction", "I AM YOUR PET!" },
+        { "instructions", "Please, make sure I don't get too hungry!" },
+        { "callToAction", "Revive me? Input 'PLEASE!' and press [ENTER] key" },
+        { "outro", "G O O D B Y E !\nI WILL MISS YOU!\nThanks for playing! ❤" }
     }
     Dictionary<string, string> hunger = new Dictionary<string, string>
     {
-        { "label", "" },
+        { "label", "LEVEL OF H U N G E R : " },
         { "meter0", "[ ][ ][ ][ ][ ]" },
         { "meter1", "[x][ ][ ][ ][ ]" },
         { "meter2", "[x][x][ ][ ][ ]" },
@@ -51,11 +24,41 @@ class Program
     }
     Dictionary<string, string> pet = new Dictionary<string, string>
     {
-        { "inhale", "" },
-        { "exhale", "" },
-        { "inhaleWideEyed", "" },
-        { "dead", "" }
+        { "inhale", @"
+      _ _ _ 
+    /       \
+    | -   - | 
+    \_ _ _ _/
+" },
+        { "exhale", @"
+      _ _ _ 
+    /       \
+   |  -   -  |
+    \_ _ _ _/
+" },
+        { "inhaleWideEyed", @"
+      _ _ _ 
+    /       \
+    | O   o | 
+    \_ _ _ _/
+" },
+        { "dead", @"
+      _ _ _ 
+    /       \
+   |  x   X  |
+    \_ _ _ _/
+" }
     }
+    Dictionary<string, string> petTalk = new Dictionary<string, string>
+    {
+        { "not hungry", "Ahhh.. I'm not hungry at all!" },
+        { "getting hungry", "*Belly grumbles*" },
+        { "getting hungrier", "*Belly grumbles louder*" },
+        { "super hungry", "Uh oh.. I'm super hungry now.." },
+        { "starving", "I M S-S-STARVING! HALP!" },
+        { "death", "O'NOOOO! I M DED!" }
+    }
+
     static object consoleLock = new object();
     static bool alive = true;
     static bool breathing = false;
