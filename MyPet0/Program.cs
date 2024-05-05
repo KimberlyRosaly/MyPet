@@ -93,7 +93,7 @@ static Dictionary<string, string> petTalk = new Dictionary<string, string>
         lock (consoleLock)
         {
             Console.SetCursorPosition(0, 2);
-            SlowPrint("WELCOME HOME!", 100);
+            SlowPrint(prompts["introduction", 100);
             SlowPrint("I AM YOUR PET!", 100);
             SlowPrint("Please, make sure I don't get too hungry!", 50);
         }
